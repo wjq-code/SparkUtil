@@ -1,0 +1,6 @@
+document=({
+    name:"张三",
+    age:12,
+    sez:"male",
+    hobby:"羽毛球"
+})
