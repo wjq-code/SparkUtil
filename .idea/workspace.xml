@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="45071337-52aa-48e9-9b74-804a1af03a9f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/mongoSettings.xml" afterDir="false" />
+    <list default="true" id="45071337-52aa-48e9-9b74-804a1af03a9f" name="Default Changelist" comment="添加工具">
+      <change afterPath="$PROJECT_DIR$/src/main/scala/com/wjq/hive/Spark2Hive2Csv.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/com/wjq/hive/outputFormat/MyOutPutFormat.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/com/wjq/hive/partitioner/MyPartitioner.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/com/wjq/jdbc/MongoDBUtil2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/com/wjq/jdbc/MongoUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/com/wjq/jdbc/MongoUtil.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,6 +16,13 @@
   </component>
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -74,7 +83,9 @@
       <updated>1571880847249</updated>
       <workItem from="1571880848933" duration="911000" />
       <workItem from="1571881764991" duration="300000" />
-      <workItem from="1571882068918" duration="2636000" />
+      <workItem from="1571882068918" duration="4657000" />
+      <workItem from="1571985701882" duration="3245000" />
+      <workItem from="1572224183467" duration="4122000" />
     </task>
     <task id="LOCAL-00001" summary="添加目录">
       <created>1571881004582</created>
@@ -97,7 +108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571898344717</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="添加目录">
+      <created>1571900876044</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1571900876044</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,6 +137,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="添加目录" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加目录" />
+    <MESSAGE value="添加工具" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加工具" />
   </component>
 </project>
