@@ -22,36 +22,6 @@ object SparkFtp {
     val port = 21
     val path = "/"
 
-    //
-    //    val df: DataFrame = sparkSession.read.
-    //      format("com.springml.spark.sftp").
-    //      option("host", host).
-    //      option("username", username).
-    //      option("password", password).
-    //      option("fileType", "txt").
-    //      option("port", port).
-    //      load(path)
-    //    df.show()
-
-
-    //    val sc = sparkSession.sparkContext
-    //    val dataSource = "ftp://test:test@192.168.1.223:21/test.txt"
-    //    sc.addFile(dataSource)
-    //
-    //    val fileName = SparkFiles.get("test.txt")
-    //
-    //    //    val df = sparkSession.read.text(fileName)
-    //    sparkSession.read.textFile(fileName).collect().foreach(print)
-
-
-    //    val ftpUri = s"ftp://${username}:${password}@${host}:${port}/${path}"
-    //
-    //    println(ftpUri)
-    //    sparkSession.sparkContext
-    //      .wholeTextFiles(ftpUri)
-    //      .collect().foreach(print)
-
-
     val ftp = getFtp(url, username, password, path)
 
         val files = ftp.listFiles()
@@ -89,21 +59,5 @@ object SparkFtp {
     // 改变工作目录
     ftp.changeWorkingDirectory(path)
     ftp
-  }
-
-  /**
-    * 连接sftp
-    */
-  def getSFtp(sparkSession: SparkSession) = {
-    val df = sparkSession.read.
-      format("com.springml.spark.sftp")
-      .option("host", "192.168.1.223")
-      .option("user", "test")
-      .option("password", "test")
-      .option("fileType", "txt")
-      .option("connectTimeout", 0)
-      .load("/test.txt")
-    df.show()
-
   }
 }
