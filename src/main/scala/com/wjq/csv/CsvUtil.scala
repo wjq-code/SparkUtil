@@ -7,12 +7,12 @@ import org.apache.spark.sql.types.StructType
 import org.apache.spark.sql.{DataFrame, SparkSession}
 
 object CsvUtil {
-  def getCsvData(sparkSession: SparkSession, sqlConf: SqlConf) = {
+  def getCsvData(sparkSession: SparkSession, path: String) = {
     sparkSession.read
       .format("csv")
       .option("header", "true")
       .option("multiLine", true)
-      .load("/csv/20191104/")
+      .load(path)
   }
 
   def saveCsv(dataFrame: DataFrame, path: String): Unit = {

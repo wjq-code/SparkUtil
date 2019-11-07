@@ -1,0 +1,18 @@
+<activations>
+    　　<activation timestamp="1225499258" type="phone">
+    　　<account-number>316</account-number>
+    　　<device-id>
+    　　　　d61b6971-33e1-42f0-bb15-aa2ae3cd8680
+    　　</device-id>
+    　　<phone-number>5108307062</phone-number>
+    　　<model>iFruit 1</model>
+    　　</activation>
+    <activation timestamp="1225499258" type="phone">
+        　　<account-number>316</account-number>
+        　　<device-id>
+        　　　　d61b6971-33e1-42f0-bb15-aa2ae3cd8680
+        　　</device-id>
+        　　<phone-number>5108307062</phone-number>
+        　　<model>iFruit 1</model>
+        　　</activation>
+</activations>

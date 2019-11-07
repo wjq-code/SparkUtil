@@ -74,6 +74,7 @@
             <artifactId>spark-streaming-kafka-0-10_2.11</artifactId>
             <version>2.2.1</version>
         </dependency>
+        <!--fastJson-->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
@@ -86,6 +87,14 @@
             <artifactId>spark-excel_2.11</artifactId>
             <version>0.12.2</version>
         </dependency>
+        <!-- spark读取xml -->
+        <dependency>
+            <groupId>com.databricks</groupId>
+            <artifactId>spark-xml_2.11</artifactId>
+            <version>0.4.1</version>
+        </dependency>
+
+        <!-- mysql -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>

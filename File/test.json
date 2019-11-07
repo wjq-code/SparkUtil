@@ -1,6 +1,1 @@
-document=({
-    name:"张三",
-    age:12,
-    sez:"male",
-    hobby:"羽毛球"
-})
+{"base":{"hostName":"172.20.8.14","ip":"172.20.8.1","originalCMD":"/ssp-manager/api/material/status/get","timestamp":"1552557529277","userId":"null:null","userType":"manual"},"infoType":"sensitivelog","interfaceNo":"3000060001","operation":{"act":{"affect":"","doType":"select","useTime":"2"},"optional":{"classCode":"","databaseName":"","fieldName":"","tableName":""},"type":"系统操作"}}

@@ -14,24 +14,27 @@ object ExcelUtil {
     StructField("sex", StringType, nullable = true)
   ))
 
-  def getExcelUtil(sparkSession: SparkSession) = {
+  def getExcelUtil(sparkSession: SparkSession, path: String) = {
+    println(path)
     val df = sparkSession.read
+      //      .format("com.crealytics.spark.excel")
+      //      .option("sheetName", "Sheet1")
+      //      .option("useHeader", "true")
+      //      .schema(peopleSchema)
+      //      .load("path")
+      //
+      //
+      //    df.show()
+
+      /*第二种方法，不指定schema,自动判断*/
       .format("com.crealytics.spark.excel")
-      .option("sheetName", "Sheet1")
-      .option("useHeader", "true")
-      .schema(peopleSchema)
-      .load("ftp://test:test@192.168.1.223:21/test.xls")
+      .option("useHeader", "true") // 是否将第一行作为表头
+      .option("inferSchema", "false") // 是否推断schema
+      .option("workbookPassword", "None") // excel文件的打开密码
 
+      .load(path) //excel文件路径
 
-    df.show()
-    /*第二种方法，不指定schema,自动判断*/
-//      .format("com.crealytics.spark.excel")
-//      .option("useHeader", "true") // 是否将第一行作为表头
-//      .option("inferSchema", "false") // 是否推断schema
-//      .option("workbookPassword", "None") // excel文件的打开密码
-//      .load("/xlsx/test.xlsx") //excel文件路径
-
-//    CsvUtil.saveCsv(df,"hdfs://hadoop:9000/csv/20191104")
+    CsvUtil.saveCsv(df, "hdfs://hadoop:9000/csv/201911066")
   }
 
   def main(args: Array[String]): Unit = {
@@ -39,7 +42,7 @@ object ExcelUtil {
     val sparkSession = SparkSession.builder()
       .config(conf)
       .getOrCreate()
-    getExcelUtil(sparkSession)
+//    getExcelUtil(sparkSession)
 
 
   }
