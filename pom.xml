@@ -16,6 +16,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
+        <spark.version>2.2.1</spark.version>
+        <scala.core.version>2.11</scala.core.version>
     </properties>
 
     <dependencies>
@@ -26,33 +28,33 @@
         </dependency>
         <dependency>
             <groupId>org.apache.spark</groupId>
-            <artifactId>spark-core_2.11</artifactId>
-            <version>2.2.1</version>
+            <artifactId>spark-core_${scala.core.version}</artifactId>
+            <version>${spark.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.spark</groupId>
-            <artifactId>spark-sql-kafka-0-10_2.11</artifactId>
-            <version>2.2.1</version>
+            <artifactId>spark-sql-kafka-0-10_${scala.core.version}</artifactId>
+            <version>${spark.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.spark</groupId>
-            <artifactId>spark-mllib_2.11</artifactId>
-            <version>2.2.1</version>
+            <artifactId>spark-mllib_${scala.core.version}</artifactId>
+            <version>${spark.version}</version>
         </dependency>
         <dependency>
             <groupId>com.springml</groupId>
-            <artifactId>spark-sftp_2.11</artifactId>
+            <artifactId>spark-sftp_${scala.core.version}</artifactId>
             <version>1.1.3</version>
         </dependency>
         <dependency>
             <groupId>org.apache.spark</groupId>
-            <artifactId>spark-sql_2.11</artifactId>
-            <version>2.2.1</version>
+            <artifactId>spark-sql_${scala.core.version}</artifactId>
+            <version>${spark.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.spark</groupId>
-            <artifactId>spark-hive_2.11</artifactId>
-            <version>2.2.1</version>
+            <artifactId>spark-hive_${scala.core.version}</artifactId>
+            <version>${spark.version}</version>
         </dependency>
         <!--<dependency>-->
         <!--<groupId>org.elasticsearch</groupId>-->
@@ -66,13 +68,13 @@
         </dependency>
         <dependency>
             <groupId>org.apache.spark</groupId>
-            <artifactId>spark-streaming_2.11</artifactId>
-            <version>2.2.1</version>
+            <artifactId>spark-streaming_${scala.core.version}</artifactId>
+            <version>${spark.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.spark</groupId>
-            <artifactId>spark-streaming-kafka-0-10_2.11</artifactId>
-            <version>2.2.1</version>
+            <artifactId>spark-streaming-kafka-0-10_${scala.core.version}</artifactId>
+            <version>${spark.version}</version>
         </dependency>
         <!--fastJson-->
         <dependency>
@@ -84,14 +86,20 @@
         <!--    spark读取Excel    -->
         <dependency>
             <groupId>com.crealytics</groupId>
-            <artifactId>spark-excel_2.11</artifactId>
+            <artifactId>spark-excel_${scala.core.version}</artifactId>
             <version>0.12.2</version>
         </dependency>
         <!-- spark读取xml -->
         <dependency>
             <groupId>com.databricks</groupId>
-            <artifactId>spark-xml_2.11</artifactId>
+            <artifactId>spark-xml_${scala.core.version}</artifactId>
             <version>0.4.1</version>
+        </dependency>
+        <!-- spark读取Mongo -->
+        <dependency>
+            <groupId>org.mongodb.spark</groupId>
+            <artifactId>mongo-spark-connector_${scala.core.version}</artifactId>
+            <version>${spark.version}</version>
         </dependency>
 
         <!-- mysql -->
@@ -114,34 +122,34 @@
         </dependency>
         <dependency>
             <groupId>org.apache.flink</groupId>
-            <artifactId>flink-table_2.11</artifactId>
+            <artifactId>flink-table_${scala.core.version}</artifactId>
             <version>1.6.3</version>
         </dependency>
         <dependency>
             <groupId>org.apache.flink</groupId>
-            <artifactId>flink-connector-kafka-0.10_2.11</artifactId>
+            <artifactId>flink-connector-kafka-0.10_${scala.core.version}</artifactId>
             <version>1.6.3</version>
         </dependency>
         <dependency>
             <groupId>org.apache.flink</groupId>
-            <artifactId>flink-connector-kafka-0.11_2.11</artifactId>
+            <artifactId>flink-connector-kafka-0.11_${scala.core.version}</artifactId>
             <version>1.6.3</version>
         </dependency>
         <dependency>
             <groupId>org.apache.flink</groupId>
-            <artifactId>flink-clients_2.11</artifactId>
-            <version>1.6.3</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.flink</groupId>
-            <artifactId>flink-scala_2.11</artifactId>
+            <artifactId>flink-clients_${scala.core.version}</artifactId>
             <version>1.6.3</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.flink</groupId>
-            <artifactId>flink-streaming-scala_2.11</artifactId>
+            <artifactId>flink-scala_${scala.core.version}</artifactId>
+            <version>1.6.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-streaming-scala_${scala.core.version}</artifactId>
             <version>1.6.3</version>
         </dependency>
 
@@ -163,12 +171,12 @@
 
         <dependency>
             <groupId>org.apache.bahir</groupId>
-            <artifactId>flink-connector-redis_2.11</artifactId>
+            <artifactId>flink-connector-redis_${scala.core.version}</artifactId>
             <version>1.0</version>
         </dependency>
         <dependency>
             <groupId>org.apache.flink</groupId>
-            <artifactId>flink-connector-filesystem_2.11</artifactId>
+            <artifactId>flink-connector-filesystem_${scala.core.version}</artifactId>
             <version>1.7.2</version>
         </dependency>
         <!--    <dependency>-->
@@ -178,7 +186,7 @@
         <!--    </dependency>-->
         <dependency>
             <groupId>org.apache.flink</groupId>
-            <artifactId>flink-connector-elasticsearch6_2.11</artifactId>
+            <artifactId>flink-connector-elasticsearch6_${scala.core.version}</artifactId>
             <version>1.6.3</version>
         </dependency>
         <!--<dependency>-->
@@ -203,12 +211,12 @@
         </dependency>
         <dependency>
             <groupId>org.elasticsearch</groupId>
-            <artifactId>elasticsearch-spark-20_2.11</artifactId>
+            <artifactId>elasticsearch-spark-20_${scala.core.version}</artifactId>
             <version>6.5.4</version>
         </dependency>
         <dependency>
             <groupId>org.apache.flink</groupId>
-            <artifactId>flink-statebackend-rocksdb_2.11</artifactId>
+            <artifactId>flink-statebackend-rocksdb_${scala.core.version}</artifactId>
             <version>1.6.1</version>
         </dependency>
 

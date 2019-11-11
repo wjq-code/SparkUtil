@@ -1,1 +1,15 @@
-{"base":{"hostName":"172.20.8.14","ip":"172.20.8.1","originalCMD":"/ssp-manager/api/material/status/get","timestamp":"1552557529277","userId":"null:null","userType":"manual"},"infoType":"sensitivelog","interfaceNo":"3000060001","operation":{"act":{"affect":"","doType":"select","useTime":"2"},"optional":{"classCode":"","databaseName":"","fieldName":"","tableName":""},"type":"系统操作"}}
+{
+  "_id": ObjectId(
+  "5dc8bdfc29af0702a4c20247"
+  ),
+  "title": "MongoDB 教程",
+  "description": "MongoDB 是一个 Nosql 数据库",
+  "by": "菜鸟教程",
+  "url": "http://www.runoob.com",
+  "tags": [
+    "mongodb",
+    "database",
+    "NoSQL"
+  ],
+  "likes": 100.0
+}

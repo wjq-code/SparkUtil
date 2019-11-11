@@ -33,29 +33,29 @@ object SparkJson {
       StructField("sex", StringType, nullable = true)
     ))
     // 原始数据的schema
-//    val sourceSchema = df.schema
-//    for (elem <- sourceSchema) {
-//      if (elem.dataType != StringType) {
-//        elem.
-//      }
-//    }
+    //    val sourceSchema = df.schema
+    //    for (elem <- sourceSchema) {
+    //      if (elem.dataType != StringType) {
+    //        elem.
+    //      }
+    //    }
 
 
     import sparkSession.implicits._
     val df1 = df.rdd.map { r =>
-//      val info = r.getAs[mutable.WrappedArray[String]](2)
-//      val infos = info.mkString(",")
-//      Row(r(0).toString, r(1).toString, r(2).toString, r(3).toString)
+      //      val info = r.getAs[mutable.WrappedArray[String]](2)
+      //      val infos = info.mkString(",")
+      //      Row(r(0).toString, r(1).toString, r(2).toString, r(3).toString)
       NewSchema(r(0).toString, r(1).toString, r(2).toString, r(3).toString)
     }.toDF()
-//    val ds = sparkSession.createDataFrame(df1,peopleSchema)
+    //    val ds = sparkSession.createDataFrame(df1,peopleSchema)
     df1.write.json("file:///D:\\idea_workspace\\SparkUtil\\File\\json2json")
 
     //    df1.show()
-//    CsvUtil.saveCsv(df1, "file:///D:\\idea_workspace\\SparkUtil\\File\\json2csv")
+    //    CsvUtil.saveCsv(df1, "file:///D:\\idea_workspace\\SparkUtil\\File\\json2csv")
 
 
-//    CsvUtil.getCsvData(sparkSession,"file:///D:\\idea_workspace\\SparkUtil\\File\\json2csv\\part-00000-a6ceb995-8324-4790-88ea-c18762f6fcc4-c000.csv").show(false)
+    //    CsvUtil.getCsvData(sparkSession,"file:///D:\\idea_workspace\\SparkUtil\\File\\json2csv\\part-00000-a6ceb995-8324-4790-88ea-c18762f6fcc4-c000.csv").show(false)
   }
 
   case class NewSchema(city: String, nlcd_name: String, infos: String, country: String)
