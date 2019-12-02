@@ -11,7 +11,9 @@ object CsvUtil {
     sparkSession.read
       .format("csv")
       .option("header", "true")
-      .option("multiLine", true)
+      .option("multiLine", "true")
+      .option("inferSchema", "true")
+      .option("codec","bzip2")
       .load(path)
   }
 
@@ -19,7 +21,10 @@ object CsvUtil {
     dataFrame.write
       .format("csv")
       .option("header", "true")
-      .option("inferSchema", "true")
+      .option("inferSchema", "false")
+      .option("dateFormat", "yyyy-MM-dd HH:mm:ss")
+      .option("codec","bzip2")
+//      .save(path)
       .save(path)
   }
 

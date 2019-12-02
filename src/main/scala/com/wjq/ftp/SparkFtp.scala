@@ -1,6 +1,6 @@
 package com.wjq.ftp
 
-import org.apache.commons.net.ftp.{FTP, FTPClient, FTPClientConfig}
+import org.apache.commons.net.ftp.{FTP, FTPClient, FTPClientConfig, FTPReply}
 import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.sql.SparkSession
 
@@ -52,6 +52,11 @@ object SparkFtp {
     ftp.connect(url, 21)
     // 登录
     ftp.login(userName, password)
+
+    //设置超时时间
+    ftp.setDataTimeout(120000)
+//    FTPReply.isPositiveCompletion()
+
     // 设置文件类型为二进制
     ftp.setFileType(FTP.BINARY_FILE_TYPE)
     // 被动模式
