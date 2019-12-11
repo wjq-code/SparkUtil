@@ -4,7 +4,10 @@ import com.wjq.csv.CsvUtil
 import com.wjq.job.SqlConf
 import org.apache.spark.sql.{DataFrameReader, SparkSession}
 
+import scala.beans.BeanProperty
+
 object MySqlUtil {
+
   /**
    * spark读取mysql中的数据，并把每张表中的数据写入到hdsf中
    * @param sparkSession

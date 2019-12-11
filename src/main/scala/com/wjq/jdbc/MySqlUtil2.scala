@@ -23,27 +23,29 @@ object MySqlUtil2 {
       .option("url", "jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull")
       .option("user", "root")
       .option("password", "root")
-//      .option("dbtable", "test")
-      .option("dbtable", "(select count(1) from test) t")
-
-    dataFrameR.load().show(false)
-
-    //    val list = sqlConf.getTable
-    //    for (elem <- list) {
-    //      println(elem)
-    //      val dataFrame = dataFrameR
-    //        .option("dbtable", elem)
-    //        .load()
-    //      val schema = dataFrame.schema.add("id",LongType)
+    ////      .option("dbtable", "test")
+    //      .option("dbtable", "(select count(1) from test) t")
     //
-    //      val dfRDD = dataFrame.rdd.zipWithIndex()
-    //      println("----------------------------------------------")
-    //      val rowRDD: RDD[Row] = dfRDD.map(tp => Row.merge(tp._1, Row(tp._2)))
-    //      val df2 = sparkSession.createDataFrame(rowRDD, schema)
-    //
-    ////      dataFrame.printSchema()
-    //      df2.show(false)
-    // 把数据写入到csv中
-//    CsvUtil.saveCsv(dataFrame, "file:///E:\\jobrs\\csv1")
+    //    dataFrameR.load().show(false)
+
+    val list = sqlConf.getTable
+    for (elem <- list) {
+      println(elem)
+      val dataFrame = dataFrameR
+        .option("dbtable", elem)
+        .load()
+      //      val schema = dataFrame.schema.add("id",LongType)
+      //
+      //      val dfRDD = dataFrame.rdd.zipWithIndex()
+      //      println("----------------------------------------------")
+      //      val rowRDD: RDD[Row] = dfRDD.map(tp => Row.merge(tp._1, Row(tp._2)))
+      //      val df2 = sparkSession.createDataFrame(rowRDD, schema)
+      //
+      ////      dataFrame.printSchema()
+      //      df2.show(false)
+      // 把数据写入到csv中
+//      CsvUtil.saveCsv(dataFrame, "file:///E:\\jobrs\\csv")
+      CsvUtil.saveCsv(dataFrame, "/csv/testCsv")
+    }
   }
 }

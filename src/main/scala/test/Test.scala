@@ -13,9 +13,12 @@ import scala.collection.mutable.ListBuffer
 
 object Test {
   def main(args: Array[String]): Unit = {
-    val format = new DecimalFormat("0000")
-    val a:Long = 101;
-    println(a.toString)
+
+
+
+//    val format = new DecimalFormat("0000")
+//    val a:Long = 101;
+//    println(a.toString)
 //    val conf = new SparkConf().setAppName("test").setMaster("local[2]")
 //    //    val sc = new SparkContext(conf)
 //    //    sc.setLogLevel("WARN")
@@ -29,10 +32,10 @@ object Test {
 //    mysqlConf.setPassword("root")
 //    mysqlConf.setDriver(GlobalConstant.MYSQL_DRIVER)
 //    var list = new ListBuffer[String]
-//    list.+=("data")
+//    list.+=("biz_log_isddl1")
 //    mysqlConf.setTable(list)
 //
-////    MySqlUtil2.getMysqlDate(sparkSession, mysqlConf)
+//    MySqlUtil2.getMysqlDate(sparkSession, mysqlConf)
 //    CsvUtil.getCsvData(sparkSession, "file:///E:\\jobrs\\csv1").show(false)
 //    /*
 //

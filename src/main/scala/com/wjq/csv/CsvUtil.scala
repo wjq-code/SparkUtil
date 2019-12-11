@@ -13,6 +13,8 @@ object CsvUtil {
       .option("header", "true")
       .option("multiLine", "true")
       .option("inferSchema", "true")
+      .option("delimiter","|")
+      .option("escape","+!")
       .option("codec","bzip2")
       .load(path)
   }
@@ -23,7 +25,11 @@ object CsvUtil {
       .option("header", "true")
       .option("inferSchema", "false")
       .option("dateFormat", "yyyy-MM-dd HH:mm:ss")
-      .option("codec","bzip2")
+//      .option("delimiter","|")
+      .option("escape","!")
+      .option("multiLine",true)
+//      .option("quoteMode","ALL")
+//      .option("codec","bzip2")
 //      .save(path)
       .save(path)
   }

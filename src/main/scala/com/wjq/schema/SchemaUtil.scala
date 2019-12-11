@@ -14,14 +14,14 @@ object SchemaUtil {
     //创建udf函数 处理array类型的数据
     val arrayToStr = udf((str: Any) => {
       str match {
-        case p: Seq[StructType] => p.asInstanceOf[Seq[StructType]].mkString(",")
-        case p: Seq[String] => p.asInstanceOf[Seq[String]].mkString(",")
-        case p: String => p.toString
-        case p: Timestamp => p.toString.substring(0,p.toString.lastIndexOf('.'))
-        case p: Object =>p.toString
-        case p: java.lang.Double =>p.toString.substring(0,p.toString.lastIndexOf("."))
-        case p: java.lang.Byte =>p.toString
-        case p: Date => p.toString
+        case p: Seq[StructType] => p.asInstanceOf[Seq[StructType]].mkString(",").replaceAll("\r", "")
+        case p: Seq[String] => p.asInstanceOf[Seq[String]].mkString(",").replaceAll("\r", "")
+        case p: String => p.toString.replaceAll("\r", "")
+        case p: Timestamp => p.toString.substring(0,p.toString.lastIndexOf('.')).replaceAll("\r", "")
+        case p: Object =>p.toString.replaceAll("\r", "")
+        case p: java.lang.Double =>p.toString.substring(0,p.toString.lastIndexOf(".")).replaceAll("\r", "")
+        case p: java.lang.Byte =>p.toString.replaceAll("\r", "")
+        case p: Date => p.toString.replaceAll("\r", "")
         //oracle
         case p: Blob =>p.toString
         case p: Clob =>p.toString
