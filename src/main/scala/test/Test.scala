@@ -1,20 +1,43 @@
 package test
 
-import java.text.DecimalFormat
+import java.sql.Timestamp
+import java.text.{DecimalFormat, SimpleDateFormat}
+import java.util
+import java.util.{Calendar, Date}
 
 import com.wjq.collection.GlobalConstant
 import com.wjq.csv.CsvUtil
 import com.wjq.jdbc.MySqlUtil2
 import com.wjq.job.SqlConf
+import org.apache.commons.codec.digest.DigestUtils
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.SparkSession
+import org.nutz.lang.Strings
 
 import scala.collection.mutable.ListBuffer
 
 object Test {
   def main(args: Array[String]): Unit = {
+    val cal = Calendar.getInstance()
+    cal.set(2020,2,0)
+    println(cal.getActualMaximum(Calendar.DAY_OF_MONTH))
+    println("202002".substring(2))
 
 
+    //c4ca4238a0b923820dcc509a6f75849b
+    //c4ca4238a0b923820dcc509a6f75849b
+
+//    val df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
+//    val tim = df.format(new Date())
+//    val time = new Timestamp(new Date().getTime).toString.substring(0,19)
+//    println(time)
+//  val str = ""
+//    println((str.split(",")(0))== "")x`
+//
+//    val list:util.ArrayList[String] = new util.ArrayList[String]
+//    list.add("1")
+//    list.add("2")
+//    println(list.toString)
 
 //    val format = new DecimalFormat("0000")
 //    val a:Long = 101;

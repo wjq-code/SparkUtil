@@ -19,7 +19,7 @@ object UDFscans {
     sc.setLogLevel("ERROR")
 
     Scans.me()
-      .scanPackage("com.skynet.udf.impl")
+      .scanPackage("com.wjq.udf.impl")
       .asScala
       .map(v =>(v.getAnnotation(classOf[UDF]).value() ,v.newInstance().asInstanceOf[IUDF[Any ,String]]))
       .foreach(v =>spark.udf.register(v._1 ,v._2.execute _))
@@ -39,7 +39,7 @@ object UDFscans {
 
     spark.sql("select * from  temp").show(false)
 
-    spark.sql("SELECT format_date_compact(id) as id ,format_float(value) as value ,format_date(time) as time ,format_date_compact(time) as time1 from temp").show(false)
+    spark.sql("SELECT format_id(id) as id ,format_float(value) as value ,format_date(time) as time ,format_date_compact(time) as time1 from temp").show(false)
 
   }
 

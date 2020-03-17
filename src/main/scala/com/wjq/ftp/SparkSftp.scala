@@ -4,7 +4,7 @@ import org.apache.spark.SparkConf
 import org.apache.spark.sql.SparkSession
 
 /**
- * 类名称: SparkFtp
+ * 类名称: SparkSFtp
  * 类描述:
  *
  * @Time 2019/10/18 16:30
