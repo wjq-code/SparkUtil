@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.apache.tika:tika-app:1.13-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://D:/Tools/repository/org/apache/tika/tika-app/1.13-SNAPSHOT/tika-app-1.13-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://D:/Tools/repository/org/apache/tika/tika-app/1.13-SNAPSHOT/tika-app-1.13-SNAPSHOT-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://D:/Tools/repository/org/apache/tika/tika-app/1.13-SNAPSHOT/tika-app-1.13-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

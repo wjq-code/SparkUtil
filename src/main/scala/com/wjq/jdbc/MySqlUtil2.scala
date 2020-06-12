@@ -37,7 +37,7 @@ object MySqlUtil2 {
     val list = sqlConf.getTable
     val dataFrame = dataFrameR
 //      .option("dbtable", "(select * from dwb_dm_lgxx_202001161013 where lat is NULL and lng is NULL) t")
-      .option("dbtable", "(SELECT * FROM `latlon` where addr = '') t")
+      .option("dbtable", "(SELECT * FROM `rj_dic_jz_34gjzxx` where domestic is null) t")
 //      .option("dbtable", "(SELECT * FROM `pcs`where lat is NULL and lng is NULL) t")
       .load()
 //    for (elem <- list) {

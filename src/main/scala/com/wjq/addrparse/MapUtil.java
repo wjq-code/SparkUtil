@@ -56,7 +56,7 @@ public class MapUtil {
      * 返回值类型
      */
     private static final String OUTPUT = "json";
-    /**
+    /**957
      * 根据地名获取经纬度
      */
     private static final String GET_LNG_LAT_URL = "http://api.map.baidu.com/geocoding/v3/";
@@ -223,14 +223,15 @@ public class MapUtil {
         JavaPairRDD<BigDecimal, BigDecimal> pairRDD = rowRDD.mapToPair(new PairFunction<Row, BigDecimal, BigDecimal>() {
             @Override
             public Tuple2 call(Row row) throws Exception {
-                return new Tuple2<BigDecimal, BigDecimal>(row.getDecimal(0), row.getDecimal(1));
+                return new Tuple2<BigDecimal, BigDecimal>(row.getDecimal(10), row.getDecimal(11));
             }
         });
         List<Tuple2<BigDecimal, BigDecimal>> collect = pairRDD.collect();
 
         for (Tuple2<BigDecimal, BigDecimal> tuple2 : collect) {
             // 把84坐标转为百度坐标
-            String location = GPS84ToBD09(tuple2._2.doubleValue(), tuple2._1.doubleValue());
+
+            String location = GPS84ToBD09(tuple2._1.doubleValue(), tuple2._2.doubleValue());
             System.out.println("location:--------------" + location);
             Map<String, String> cityByLonLat = getCityByLonLat(location);
             String province = cityByLonLat.get("province");
@@ -250,12 +251,13 @@ public class MapUtil {
             NutDao dao = getDao();
             Record record = new Record();
             record.put("addr", addr);
+            record.put("rzsjaddr", addr);
             record.put("province", province);
             record.put("city", city);
             record.put("district", district);
             record.put("gjdm", gjdm);
             record.put("domestic", domestic);
-            dao.update("latlon", record.toChain(), Cnd.where("lat", "=", tuple2._1).and("lon", "=", tuple2._2));
+            dao.update("rj_dic_jz_34gjzxx", record.toChain(), Cnd.where("lat", "=", tuple2._1).and("lon", "=", tuple2._2));
         }
     }
 
